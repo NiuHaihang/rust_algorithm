@@ -41,13 +41,13 @@ pub mod longest {
         let s = nums.into_iter().collect::<HashSet<i32>>();
         let mut tmp_len;
         let mut res = 0;
-        for &val in s.iter(){
-            if !s.contains(&(val-1)){
+        for &val in s.iter() {
+            if !s.contains(&(val - 1)) {
                 tmp_len = 1;
-                let mut tmp_val = val+1;
-                while s.contains(&tmp_val){
+                let mut tmp_val = val + 1;
+                while s.contains(&tmp_val) {
                     tmp_len += 1;
-                    tmp_val+=1;
+                    tmp_val += 1;
                 }
                 res = res.max(tmp_len);
             }
